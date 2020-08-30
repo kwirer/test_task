@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db?stringtype=unspecified
+    username: db_user
+    password: db_pass
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximumPoolSize: 10
+      idleTimeout: 30000
+    platform: postgres
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    properties:
+      database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        generate_statistics: false
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          batch_size: 500
+
